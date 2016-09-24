@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tracking: false
+  article: one
+  start_date: 2016-09-24 13:20:20
+  end_date: 2016-09-24 13:20:20
+
+two:
+  tracking: false
+  article: two
+  start_date: 2016-09-24 13:20:20
+  end_date: 2016-09-24 13:20:20

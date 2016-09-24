@@ -5,7 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* base de datos local conf
+  database: heyiamheredb 
+  usuario: uheyiamhere
+  password: 123456789
+
+    create user uheyiamhere with password '123456789';
+
+    CREATE DATABASE heyiamheredb;
+
+    GRANT ALL PRIVILEGES ON DATABASE "heyiamheredb" to uheyiamhere;
+
 
 * System dependencies
 
