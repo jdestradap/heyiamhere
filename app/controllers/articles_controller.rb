@@ -1,13 +1,11 @@
 class ArticlesController < ApplicationController
-  def new
-  end
+  respond_to :json
 
-  def create
-    render plain: params[:article].inspect
+  def new
   end
 
   def show
     @article = Article.find(params[:id])
-    render json: @article
+    respond_with @article, status: 200
   end
 end
