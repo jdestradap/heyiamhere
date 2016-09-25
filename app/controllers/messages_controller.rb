@@ -7,13 +7,19 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)    
-    if @message.save
-      respond_with @message, status: 200
+    messages = messages_params
+    messages[:messages].each do |message|
+      Message.create(article_id: message[:article_id], 
+                     motion: message[:motion], 
+                     latitud: message[:latitud], 
+                     longitud: message[:longitud], 
+                     radius: message[:radius], 
+                     message_time: message[:message_time])
     end
+    head :ok
   end
 
-  def message_params
-    params.require(:message).permit(:motion, :article_id)
+  def messages_params
+    params.permit(messages: [:article_id, :motion, :latitud, :longitud, :radius, :message_time])
   end
 end
