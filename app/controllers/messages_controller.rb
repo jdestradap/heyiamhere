@@ -18,6 +18,8 @@ class MessagesController < ApplicationController
     head :ok
   end
 
+  private 
+
   def messages_params
     params.permit(messages: [:article_id, :motion, :latitud, :longitud, :radius, :message_time])
   end
