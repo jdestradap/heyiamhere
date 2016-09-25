@@ -15,3 +15,9 @@ jubelcito = Article.create(name: "Hijo", description: "Hijo", created_at: Time.n
 
 user_bike.articles << bike
 user_son.articles << jubelcito
+
+location_son = Location.create(tracking: true, start_date: Time.now, end_date: Time.now + 60*120, created_at: Time.now, updated_at: Time.now, latitud: 6.2442, longitud: 75.5812, max_radius_alert: 10)
+location_bike = Location.create(tracking: true, start_date: Time.now, end_date: Time.now + 60*120, created_at: Time.now, updated_at: Time.now, latitud: 6.2442, longitud: 75.5812, max_radius_alert: 1)
+
+jubelcito.locations << location_son
+bike.locations << location_bike
