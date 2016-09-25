@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
   respond_to :json
 
-  def new
-  end
-
   def create
     @user = User.find(article_params[:user_id])
     @article = @user.articles.new(name: article_params[:name],
