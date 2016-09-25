@@ -5,12 +5,17 @@
   usuario: uheyiamhere
   password: 123456789
 
-    create user uheyiamhere with password '123456789';
+    sudo -u postgres psql
 
     CREATE DATABASE heyiamheredb;
+        
+    create user uheyiamhere with password '123456789';
 
     GRANT ALL PRIVILEGES ON DATABASE "heyiamheredb" to uheyiamhere;
 
+    salirse de la bd --> \q
+
+    conectarse a la db --> sudo -u postgres psql heyiamheredb
 
 
 * Ejemplo creacion de mensajes
