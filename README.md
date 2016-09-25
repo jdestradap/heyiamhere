@@ -1,10 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * base de datos local conf
   database: heyiamheredb 
   usuario: uheyiamhere
@@ -17,18 +12,20 @@ Things you may want to cover:
     GRANT ALL PRIVILEGES ON DATABASE "heyiamheredb" to uheyiamhere;
 
 
-* System dependencies
 
-* Configuration
+* Ejemplo creacion de mensajes
 
-* Database creation
+    - POST
+    - https://heyiamhere.herokuapp.com/messages
+    - data:
+    {"messages": [
+        {"article_id":1,"motion":true, "latitud":"34.4", "longitud": "1.4", "radius": "0", "message_time": "2016-09-24 19:34:30 -0500" },
+        {"article_id":1,"motion":true, "latitud":"34.4", "longitud": "1.4", "radius": "20", "message_time": "2016-09-24 19:34:30 -0500" },
+        {"article_id":1,"motion":true, "latitud":"34.4", "longitud": "1.4", "radius": "40", "message_time": "2016-09-24 19:34:30 -0500" }
+    ]}
 
-* Database initialization
+* Consulta de mensajes
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    - GET
+    - https://heyiamhere.herokuapp.com/messages
+    

@@ -9,7 +9,12 @@ class MessagesController < ApplicationController
   def create
     messages = messages_params
     messages[:messages].each do |message|
-      Message.create(article_id: message[:article_id] , motion: message[:motion], latitud: message[:latitud], longitud: message[:longitud], radius: message[:radius], message_time: message[:message_time])
+      Message.create(article_id: message[:article_id], 
+                     motion: message[:motion], 
+                     latitud: message[:latitud], 
+                     longitud: message[:longitud], 
+                     radius: message[:radius], 
+                     message_time: message[:message_time])
     end
     head :ok
   end
