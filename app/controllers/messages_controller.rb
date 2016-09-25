@@ -7,8 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    messages = messages_params
-    messages[:messages].each do |message|
+    messages_params[:messages].each do |message|
       Message.create(article_id: message[:article_id], 
                      motion: message[:motion], 
                      latitud: message[:latitud], 
