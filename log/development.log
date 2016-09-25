@@ -3576,3 +3576,808 @@ ORDER BY c.conname
   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."user_id" = $1 ORDER BY "articles"."id" ASC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
   [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."article_id" = $1 ORDER BY "locations"."id" ASC LIMIT $2[0m  [["article_id", 6], ["LIMIT", 1]]
+Started POST "/articles" for ::1 at 2016-09-25 12:38:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+                           description: article_params[:description]
+                                      ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:10: syntax error, unexpected ':', expecting keyword_end
+                           user_id: article_params[:user_id])
+                                   ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+                             start_date: article_params[:start_date]
+                                       ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+                             end_date: article_params[:end_date]
+                                      ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:15: syntax error, unexpected ':', expecting keyword_end
+                             latitud: article_params[:latitud]
+                                     ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:16: syntax error, unexpected ':', expecting keyword_end
+                             longitud: article_params[:longitud]
+                                      ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:17: syntax error, unexpected ':', expecting keyword_end
+                             end_date: article_params[:end_date]
+                                      ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:18: syntax error, unexpected ':', expecting keyword_end
+...              max_radius_alert: article_params[:max_radius_a...
+...                               ^
+/Users/jdestradap/projects/startup-weekend/heyiamhere/app/controllers/articles_controller.rb:18: syntax error, unexpected ')', expecting keyword_end):
+  
+app/controllers/articles_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/articles_controller.rb:10: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+app/controllers/articles_controller.rb:13: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/articles_controller.rb:14: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:15: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:16: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:17: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:18: syntax error, unexpected ':', expecting keyword_end
+app/controllers/articles_controller.rb:18: syntax error, unexpected ')', expecting keyword_end
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.8ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.0ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:39:03 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>1, "description"=>true, "user_id"=>1, "start_date"=>1474824412, "end_date"=>1474824512, "latitud"=>10.8, "longitud"=>10.3, "max_radius_alert"=>10, "article"=>{"name"=>1, "description"=>true, "user_id"=>1}}
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 11.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'location' for Location.):
+  
+app/controllers/articles_controller.rb:19:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.8ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:39:08 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>1, "description"=>true, "user_id"=>1, "start_date"=>1474824412, "end_date"=>1474824512, "latitud"=>10.8, "longitud"=>10.3, "max_radius_alert"=>10, "article"=>{"name"=>1, "description"=>true, "user_id"=>1}}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'location' for Location.):
+  
+app/controllers/articles_controller.rb:19:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.3ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.3ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:40:49 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>1, "description"=>true, "user_id"=>1, "start_date"=>1474824412, "end_date"=>1474824512, "latitud"=>10.8, "longitud"=>10.3, "max_radius_alert"=>10, "article"=>{"name"=>1, "description"=>true, "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "1"], ["description", "t"], ["user_id", 1], ["created_at", 2016-09-25 17:40:49 UTC], ["updated_at", 2016-09-25 17:40:49 UTC]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "locations" ("article_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["article_id", 9], ["created_at", 2016-09-25 17:40:49 UTC], ["updated_at", 2016-09-25 17:40:49 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (9.57ms)
+Completed 200 OK in 107ms (Views: 32.1ms | ActiveRecord: 21.0ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 12:44:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{name: "Trek super start", description: "Zanahoria", user_id: 1
+							tracking: true,
+                             start_date: "1474824412",
+                             end_date:"1474824512",
+                             latitud: 65.1,
+                             longitud:65.1,
+                             max_radius_alert: 20}
+  
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{name: "Trek super start", description: "Zanahoria", user_id: 1
+							tracking: true,
+                             start_date: "1474824412",
+                             end_date:"1474824512",
+                             latitud: 65.1,
+                             longitud:65.1,
+                             max_radius_alert: 20}'):
+  
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:71:in `rescue in parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:65:in `parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:366:in `block in POST'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:365:in `POST'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.7ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.7ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:45:04 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{name: "Trek super start", description: "Zanahoria", user_id: 1
+							tracking: true,
+                             start_date: "1474824412",
+                             end_date:"1474824512",
+                             latitud: 65.1,
+                             longitud:65.1,
+                             max_radius_alert: 20}
+  
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{name: "Trek super start", description: "Zanahoria", user_id: 1
+							tracking: true,
+                             start_date: "1474824412",
+                             end_date:"1474824512",
+                             latitud: 65.1,
+                             longitud:65.1,
+                             max_radius_alert: 20}'):
+  
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:71:in `rescue in parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:65:in `parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:366:in `block in POST'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:365:in `POST'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.7ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:45:59 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{"name": "Trek super start", "description": "Zanahoria", "user_id": 1
+							"tracking": true,
+                             "start_date": "1474824412",
+                             "end_date":"1474824512",
+                             "latitud": 65.1,
+                             "longitud":65.1,
+                             "max_radius_alert": 20}
+  
+ActionDispatch::ParamsParser::ParseError (822: unexpected token at '{"name": "Trek super start", "description": "Zanahoria", "user_id": 1
+							"tracking": true,
+                             "start_date": "1474824412",
+                             "end_date":"1474824512",
+                             "latitud": 65.1,
+                             "longitud":65.1,
+                             "max_radius_alert": 20}'):
+  
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:71:in `rescue in parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/parameters.rb:65:in `parse_formatted_parameters'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:366:in `block in POST'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch'
+rack (2.0.1) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:365:in `POST'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.9ms)
+Started POST "/articles" for ::1 at 2016-09-25 12:46:13 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Trek super start"], ["description", "Zanahoria"], ["user_id", 1], ["created_at", 2016-09-25 17:46:14 UTC], ["updated_at", 2016-09-25 17:46:14 UTC]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "locations" ("article_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["article_id", 10], ["created_at", 2016-09-25 17:46:14 UTC], ["updated_at", 2016-09-25 17:46:14 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (7.28ms)
+Completed 200 OK in 222ms (Views: 28.1ms | ActiveRecord: 21.8ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 12:47:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1}}
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 9.7ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'location' for Location.):
+  
+app/controllers/articles_controller.rb:18:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.3ms)
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/articles" for ::1 at 2016-09-25 12:51:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Trek super start"], ["description", "Zanahoria"], ["user_id", 1], ["created_at", 2016-09-25 17:51:05 UTC], ["updated_at", 2016-09-25 17:51:05 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 11]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (15.47ms)
+Completed 200 OK in 131ms (Views: 35.9ms | ActiveRecord: 19.1ms)
+
+
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tracking", true], ["article_id", 11], ["created_at", 2016-09-25 17:52:56 UTC], ["updated_at", 2016-09-25 17:52:56 UTC]]
+  [1m[35m (100.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/articles" for ::1 at 2016-09-25 12:53:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"Trek super start", "description"=>"Zanahoria", "user_id"=>1}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Trek super start"], ["description", "Zanahoria"], ["user_id", 1], ["created_at", 2016-09-25 17:53:53 UTC], ["updated_at", 2016-09-25 17:53:53 UTC]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "locations" ("article_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["article_id", 12], ["created_at", 2016-09-25 17:53:53 UTC], ["updated_at", 2016-09-25 17:53:53 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (7.64ms)
+Completed 200 OK in 126ms (Views: 26.6ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:00:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"Trek super start", "description"=>"sss", "user_id"=>1, "article"=>{"name"=>"Trek super start", "description"=>"sss", "user_id"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Trek super start"], ["description", "sss"], ["user_id", 1], ["created_at", 2016-09-25 18:00:53 UTC], ["updated_at", 2016-09-25 18:00:53 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.8ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 13]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (15.09ms)
+Completed 200 OK in 115ms (Views: 31.7ms | ActiveRecord: 18.9ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:03:18 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:03:18 UTC], ["updated_at", 2016-09-25 18:03:18 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "locations" ("article_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["article_id", 14], ["created_at", 2016-09-25 18:03:18 UTC], ["updated_at", 2016-09-25 18:03:18 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 14]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (9.41ms)
+Completed 200 OK in 88ms (Views: 12.1ms | ActiveRecord: 17.2ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:04:01 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:04:01 UTC], ["updated_at", 2016-09-25 18:04:01 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("article_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["article_id", 15], ["created_at", 2016-09-25 18:04:01 UTC], ["updated_at", 2016-09-25 18:04:01 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 15]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (8.37ms)
+Completed 200 OK in 72ms (Views: 10.0ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:09:20 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:09:21 UTC], ["updated_at", 2016-09-25 18:09:21 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 14.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'location' for Location.):
+  
+app/controllers/articles_controller.rb:19:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.3ms)
+Started POST "/articles" for ::1 at 2016-09-25 13:09:51 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:09:51 UTC], ["updated_at", 2016-09-25 18:09:51 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 16.4ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/articles_controller.rb:19:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.0ms)
+Started POST "/articles" for ::1 at 2016-09-25 13:10:04 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:10:04 UTC], ["updated_at", 2016-09-25 18:10:04 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.5ms)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  
+app/controllers/articles_controller.rb:19:in `create'
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jdestradap/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.3ms)
+Started POST "/articles" for ::1 at 2016-09-25 13:16:07 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:16:07 UTC], ["updated_at", 2016-09-25 18:16:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (ActiveRecord: 12.8ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:18:52 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:18:52 UTC], ["updated_at", 2016-09-25 18:18:52 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 53ms (ActiveRecord: 15.4ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:19:54 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:19:54 UTC], ["updated_at", 2016-09-25 18:19:54 UTC]]
+  [1m[35m (99.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 115ms (ActiveRecord: 101.0ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:21:07 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:21:07 UTC], ["updated_at", 2016-09-25 18:21:07 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 52ms (ActiveRecord: 14.9ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:22:47 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:22:47 UTC], ["updated_at", 2016-09-25 18:22:47 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 52ms (ActiveRecord: 15.7ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:23:42 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:23:42 UTC], ["updated_at", 2016-09-25 18:23:42 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Unpermitted parameters: tracking, start_date, end_date, latitud, longitud, max_radius_alert, article
+Completed 200 OK in 76ms (ActiveRecord: 16.2ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:24:30 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:24:30 UTC], ["updated_at", 2016-09-25 18:24:30 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Completed 200 OK in 63ms (ActiveRecord: 15.6ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:25:04 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:25:04 UTC], ["updated_at", 2016-09-25 18:25:04 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Completed 200 OK in 67ms (ActiveRecord: 14.9ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:25:31 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>1474824412, "end_date"=>1474824512, "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:25:31 UTC], ["updated_at", 2016-09-25 18:25:31 UTC]]
+  [1m[35m (99.7ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Completed 200 OK in 118ms (ActiveRecord: 100.9ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:28:09 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>1474824412, "end_date"=>1474824512, "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:28:09 UTC], ["updated_at", 2016-09-25 18:28:09 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "created_at", "updated_at", "latitud", "longitud", "max_radius_alert") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tracking", true], ["article_id", 28], ["created_at", 2016-09-25 18:28:09 UTC], ["updated_at", 2016-09-25 18:28:09 UTC], ["latitud", #<BigDecimal:7f8f4ace6518,'0.651E2',18(27)>], ["longitud", #<BigDecimal:7f8f4ace60b8,'0.651E2',18(27)>], ["max_radius_alert", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 28]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (10.63ms)
+Completed 200 OK in 84ms (Views: 14.1ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:28:31 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"1474824412", "end_date"=>"1474824512", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:28:31 UTC], ["updated_at", 2016-09-25 18:28:31 UTC]]
+  [1m[35m (98.3ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "created_at", "updated_at", "latitud", "longitud", "max_radius_alert") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["tracking", true], ["article_id", 29], ["created_at", 2016-09-25 18:28:31 UTC], ["updated_at", 2016-09-25 18:28:31 UTC], ["latitud", #<BigDecimal:7f8f4b0c7740,'0.651E2',18(27)>], ["longitud", #<BigDecimal:7f8f4b0c7510,'0.651E2',18(27)>], ["max_radius_alert", 20]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 29]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (3.42ms)
+Completed 200 OK in 140ms (Views: 3.8ms | ActiveRecord: 101.5ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:30:34 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"2016-09-24 19:34:30 -0500", "end_date"=>"2016-09-24 19:34:30 -0500", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:30:34 UTC], ["updated_at", 2016-09-25 18:30:34 UTC]]
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "start_date", "end_date", "created_at", "updated_at", "latitud", "longitud", "max_radius_alert") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["tracking", true], ["article_id", 30], ["start_date", 2016-09-25 00:34:30 UTC], ["end_date", 2016-09-25 00:34:30 UTC], ["created_at", 2016-09-25 18:30:34 UTC], ["updated_at", 2016-09-25 18:30:34 UTC], ["latitud", #<BigDecimal:7f8f4b161070,'0.651E2',18(27)>], ["longitud", #<BigDecimal:7f8f4b160e40,'0.651E2',18(27)>], ["max_radius_alert", 20]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (1.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 30]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (16.47ms)
+Completed 200 OK in 128ms (Views: 19.8ms | ActiveRecord: 50.9ms)
+
+
+Started POST "/messages" for ::1 at 2016-09-25 13:30:53 -0500
+Processing by MessagesController#create as */*
+  Parameters: {"messages"=>[{"article_id"=>1, "motion"=>true, "latitud"=>"34.4", "longitud"=>"1.4", "radius"=>"0", "message_time"=>"2016-09-24 19:34:30 -0500"}, {"article_id"=>1, "motion"=>true, "latitud"=>"34.4", "longitud"=>"1.4", "radius"=>"20", "message_time"=>"2016-09-24 19:34:30 -0500"}, {"article_id"=>1, "motion"=>true, "latitud"=>"34.4", "longitud"=>"1.4", "radius"=>"40", "message_time"=>"2016-09-24 19:34:30 -0500"}], "message"=>{}}
+Unpermitted parameter: message
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("motion", "created_at", "updated_at", "article_id", "latitud", "longitud", "radius", "message_time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["motion", true], ["created_at", 2016-09-25 18:30:53 UTC], ["updated_at", 2016-09-25 18:30:53 UTC], ["article_id", 1], ["latitud", #<BigDecimal:7f8f4ea93e60,'0.344E2',18(27)>], ["longitud", #<BigDecimal:7f8f4ea93d70,'0.14E1',18(27)>], ["radius", 0], ["message_time", 2016-09-25 00:34:30 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "messages" ("motion", "created_at", "updated_at", "article_id", "latitud", "longitud", "radius", "message_time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["motion", true], ["created_at", 2016-09-25 18:30:53 UTC], ["updated_at", 2016-09-25 18:30:53 UTC], ["article_id", 1], ["latitud", #<BigDecimal:7f8f4eaa2a78,'0.344E2',18(27)>], ["longitud", #<BigDecimal:7f8f4eaa2988,'0.14E1',18(27)>], ["radius", 20], ["message_time", 2016-09-25 00:34:30 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("motion", "created_at", "updated_at", "article_id", "latitud", "longitud", "radius", "message_time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["motion", true], ["created_at", 2016-09-25 18:30:53 UTC], ["updated_at", 2016-09-25 18:30:53 UTC], ["article_id", 1], ["latitud", #<BigDecimal:7f8f4b2014f8,'0.344E2',18(27)>], ["longitud", #<BigDecimal:7f8f4b201408,'0.14E1',18(27)>], ["radius", 40], ["message_time", 2016-09-25 00:34:30 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 39ms (ActiveRecord: 13.6ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:31:32 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"2016-09-24 19:34:30 -0500", "end_date"=>"2016-09-24 19:34:30 -0500", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:31:32 UTC], ["updated_at", 2016-09-25 18:31:32 UTC]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "start_date", "end_date", "created_at", "updated_at", "latitud", "longitud", "max_radius_alert") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["tracking", true], ["article_id", 31], ["start_date", 2016-09-25 00:34:30 UTC], ["end_date", 2016-09-25 00:34:30 UTC], ["created_at", 2016-09-25 18:31:32 UTC], ["updated_at", 2016-09-25 18:31:32 UTC], ["latitud", #<BigDecimal:7f8f4b2a9e78,'0.651E2',18(27)>], ["longitud", #<BigDecimal:7f8f4b2a9c48,'0.651E2',18(27)>], ["max_radius_alert", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 31]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (8.59ms)
+Completed 200 OK in 88ms (Views: 11.0ms | ActiveRecord: 16.2ms)
+
+
+Started POST "/articles" for ::1 at 2016-09-25 13:31:45 -0500
+Processing by ArticlesController#create as */*
+  Parameters: {"name"=>"hola", "description"=>"hola", "user_id"=>1, "tracking"=>true, "start_date"=>"2016-09-24 19:34:30 -0500", "end_date"=>"2016-09-24 19:34:30 -0500", "latitud"=>65.1, "longitud"=>65.1, "max_radius_alert"=>20, "article"=>{"name"=>"hola", "description"=>"hola", "user_id"=>1}}
+Unpermitted parameter: article
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+Unpermitted parameter: article
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("name", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "hola"], ["description", "hola"], ["user_id", 1], ["created_at", 2016-09-25 18:31:45 UTC], ["updated_at", 2016-09-25 18:31:45 UTC]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "locations" ("tracking", "article_id", "start_date", "end_date", "created_at", "updated_at", "latitud", "longitud", "max_radius_alert") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["tracking", true], ["article_id", 32], ["start_date", 2016-09-25 00:34:30 UTC], ["end_date", 2016-09-25 00:34:30 UTC], ["created_at", 2016-09-25 18:31:45 UTC], ["updated_at", 2016-09-25 18:31:45 UTC], ["latitud", #<BigDecimal:7f8f4d2a0448,'0.651E2',18(27)>], ["longitud", #<BigDecimal:7f8f4d2a01c8,'0.651E2',18(27)>], ["max_radius_alert", 20]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers]   [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."article_id" = $1[0m  [["article_id", 32]]
+[active_model_serializers] Rendered ArticleSerializer with ActiveModelSerializers::Adapter::Attributes (4.07ms)
+Completed 200 OK in 45ms (Views: 5.0ms | ActiveRecord: 4.8ms)
+
+
